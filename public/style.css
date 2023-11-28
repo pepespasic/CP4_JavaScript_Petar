@@ -1,0 +1,51 @@
+/*
+  Name: Petar Spasic
+  Date: 11/07/2023
+  Here is my CSS file. Here are the rule sets to style my html files.
+*/
+
+footer {
+    background-color: #e3e3e3;
+    bottom: 0;
+    opacity: 0.8;
+    position: fixed;
+    width: 100%;
+  }
+
+  footer p {
+    font-style: italic;
+    text-align: center;
+  }
+
+  img {
+    height: 200px;
+    margin: 5px;
+  }
+
+  #pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+
+  .chess ul{
+    font-size: 11pt;
+    border-color: white;
+    text-align: left;
+    text-emphasis: none;
+    text-decoration: none;
+  }
+
+  h2, h3 {
+    color: darkgray
+  }
+  blockquote{
+    text-transform: none;
+    height: 20%;
+  }
+
+  ol {
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
