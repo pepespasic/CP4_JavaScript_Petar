@@ -7,14 +7,16 @@
   window.addEventListener("load", init);
 
   
-
+  /**
+   * Add a function that will be called when the window is loaded.
+   */
   function init() {
     let categoryList = qsa("label input")
     categoryList[0].addEventListener("change", makeRequest);
     categoryList[1].addEventListener("change", makeRequest);
   }
 /**
-    * Fetches data from random user api.
+    * Fetches data from jokebook.
     */
 function makeRequest() {
     // TODO
@@ -28,17 +30,26 @@ function makeRequest() {
       .catch(handleError);
   }
   /**
-   * Retrieves image url from response and 
+   * Retrieves joke from jokebook in JSON response format and 
    * displays it on page.
    * @param {*} response web page with JSON data
    */
   function processData(response) {
-    let categoryValue = response.;
-    let image = document.createElement("img");
-    image.src = imagePath;
-    id("categories").appendChild(image);
+    let category = response;
+    let paragraph = document.createElement("p");
+    paragraph.textContent = category;
+    id("categories").appendChild(paragraph);
   }
 
+  /**
+   * Displays error message on page.
+   * @param {*} response error message
+   */
+  function handleError(response) {
+    let paragraph = document.createElement("p");
+    paragraph.textContent = response;
+    id("pictures").appendChild(paragraph);
+  }
   async function checkStatus(res) {
     if (!res.ok) {
       throw new Error(await res.text());
