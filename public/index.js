@@ -37,7 +37,7 @@ function makeRequest() {
   function processData(response) {
     let category = response;
     let paragraph = document.createElement("p");
-    paragraph.textContent = category;
+    paragraph.textContent = JSON.stringify(category);
     id("categories").appendChild(paragraph);
   }
 
@@ -48,9 +48,9 @@ function makeRequest() {
   function handleError(response) {
     let paragraph = document.createElement("p");
     paragraph.textContent = response;
-    id("pictures").appendChild(paragraph);
+    id("categories").appendChild(paragraph);
   }
-  async function checkStatus(res) {
+  async function statusCheck(res) {
     if (!res.ok) {
       throw new Error(await res.text());
     }

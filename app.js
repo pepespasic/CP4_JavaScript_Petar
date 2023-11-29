@@ -19,22 +19,22 @@ const app = express();
 let categories = ['funnyJoke', 'lameJoke'];
 let funnyJoke = [
   {
-    'joke': 'Why did the student eat his homework?',
-    'response': 'Because the teacher told him it was a piece of cake!'
+    'joke': 'Why did the student not do his homework?',
+    'response': 'Because the dog ate his homework!'
   },
   {
-    'joke': 'What kind of tree fits in your hand?',
-    'response': 'A palm tree'
+    'joke': 'What kind of tree can you eat?',
+    'response': 'A oak tree'
   },
   {
-    'joke': 'What is worse than raining cats and dogs?',
-    'response': 'Hailing taxis'
+    'joke': 'Why scientists do not trust atoms?',
+    'response': 'Because they make up everything'
   }
 ];
 let lameJoke = [
   {
-    'joke': 'Which bear is the most condescending?',
-    'response': 'Pan-DUH'
+    'joke': 'Why do we call two cats black and white polar cats?',
+    'response': 'Because they have opposite personality'
   },
   {
     'joke': 'What would the Terminator be called in his retirement?',
@@ -57,14 +57,16 @@ app.get('/jokebook/joke/:category', function(req, res) {
   let category = req.params['category'];
   if (categories.includes(category)) {
     if (category == 'funnyJoke') {
-      res.json({"funnyJoke": funnyJoke[parseInt(Math.floor(Math.random() * 3))].joke});
+      res.send(funnyJoke[parseInt(Math.floor(Math.random() * 3))]);
+      //res.json({"funnyJoke": funnyJoke[parseInt(Math.floor(Math.random() * 3))].joke});
     }
     if (category == 'lameJoke') {
-      res.json({"lameJoke": lameJoke[parseInt(Math.floor(Math.random() * 2))].joke});
+      res.send(lameJoke[parseInt(Math.floor(Math.random() * 2))]);
+      //res.json({"lameJoke": lameJoke[parseInt(Math.floor(Math.random() * 2))].joke});
     }
   }
   else {
-    res.json({'error': 'no category listed for category'});
+    res.status(404).send("Page Not Found");
   }
   
 });
