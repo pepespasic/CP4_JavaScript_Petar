@@ -1,5 +1,9 @@
-/** 
- * Feel free to use this file to test your endpoints.
+/**
+ * Name: Petar Spasic
+ * Date: 11/07/2023
+ *
+ * Here my JavaScript file that takes user input and display after user has clicked the button.
+ * It handles error if joke and response in JSON format can't be displayed.
  */
 "use strict";
 
