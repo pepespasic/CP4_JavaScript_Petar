@@ -2,6 +2,9 @@
  * Name: Petar Spasic
  * Date: 11/29/2023
  * 
+ * Gives possible categories to user. If user provides valid category returns joke and 
+ * response in JSON format, otherwise gives error in plain text.
+ * 
  * Define the following endpoints:
  * 1. Endpoint 1  (GET): /jokebook/categories
  *   - should respond with a plain text response
