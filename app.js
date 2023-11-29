@@ -1,5 +1,6 @@
 /**
- * Exercise 7 code
+ * Name: Petar Spasic
+ * Date: 11/29/2023
  * 
  * Define the following endpoints:
  * 1. Endpoint 1  (GET): /jokebook/categories
@@ -9,7 +10,7 @@
  * 2. Endpoint 2 (GET): /jokebook/joke/:category
  *   - should respond with a JSON response
  *   - will send a random JSON response from the specified /:category
- *   - If the category is not valid, will respond with {'error': 'no category listed for category'}
+ *   - If the category is not valid, will set status 404 and respond with error message
  */
 'use strict';
 
@@ -55,7 +56,10 @@ app.get('/jokebook/categories', function(req, res) {
 
 app.get('/jokebook/joke/:category', function(req, res) {
   let category = req.params['category'];
-  if (categories.includes(category)) {
+  if(!categories.includes(category)) {
+    res.status(400).send("Category not found");
+  }
+  else {
     if (category == 'funnyJoke') {
       res.send(funnyJoke[parseInt(Math.floor(Math.random() * 3))]);
       //res.json({"funnyJoke": funnyJoke[parseInt(Math.floor(Math.random() * 3))].joke});
@@ -64,9 +68,6 @@ app.get('/jokebook/joke/:category', function(req, res) {
       res.send(lameJoke[parseInt(Math.floor(Math.random() * 2))]);
       //res.json({"lameJoke": lameJoke[parseInt(Math.floor(Math.random() * 2))].joke});
     }
-  }
-  else {
-    res.status(404).send("Page Not Found");
   }
   
 });

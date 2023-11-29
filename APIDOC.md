@@ -1,47 +1,52 @@
-# *FILL IN NAME* API Documentation
-*Fill in a short description here about the API's purpose.*
+# Jokebook API Documentation
+The Jokebook API provides information on the joke and response based 
+on the category selected. 
 
 ## *Fill in Endpoint 1 Title*
-**Request Format:** *Fill in example request format*
+**Request Format:** /all
 
-**Request Type:** *Fill in request type*
+**Request Type:** GET
 
 **Returned Data Format**: Plain Text
 
-**Description:** *Fill in description*
+**Description:** Returns a description of possible categories on a new line.
 
 
-**Example Request:** *Fill in example request*
+**Example Request:** /all
 
 **Example Response:**
 *Fill in example response in the ticks*
 
 ```
+a possible category is funnyJoke
+a possible category is lameJoke
 
 ```
 
 **Error Handling:**
-*Fill in an example of the error handling*
+- N/A
 
 ## *Fill in Endpoint 2 Title*
-**Request Format:** *Fill in example request format*
+**Request Format:** /jokebook/joke/:category
 
-**Request Type:** *Fill in request type*
+**Request Type:** GET
 
 **Returned Data Format**: JSON
 
-**Description:** *Fill in description*
+**Description:** *Fill
 
-**Example Request:** *Fill in example request*
+**Example Request:** /jokebook/joke/funnyJoke
 
 **Example Response:**
 *Fill in example response in the {}*
 
 ```json
 {
-
+    'joke': 'Why did the student not do his homework?',
+    'response': 'Because the dog ate his homework!'
 }
 ```
 
 **Error Handling:**
-*Fill in an example of the error handling*
+- If category name is not vaild then set response status to 400 and respond with plain text: `Category not found`
+- If category name is not provided then respond with plain text for example: `Cannot GET /jokebook/joke/`
