@@ -33,7 +33,7 @@ a possible category is lameJoke
 
 **Returned Data Format**: JSON
 
-**Description:** Returns 
+**Description:** Returns joke and response based on provided category
 
 **Example Request:** /jokebook/joke/funnyJoke
 
