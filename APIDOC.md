@@ -33,7 +33,7 @@ a possible category is lameJoke
 
 **Returned Data Format**: JSON
 
-**Description:** *Fill
+**Description:** Returns 
 
 **Example Request:** /jokebook/joke/funnyJoke
 
@@ -49,4 +49,4 @@ a possible category is lameJoke
 
 **Error Handling:**
 - If category name is not vaild sets response status to 400 and responds with plain text: `Category not found`
-- If category name is not provided then responds with plain text for example: `Cannot GET /jokebook/joke/`
+- If category name is not provided then responds with plain text: `Cannot GET {url}`
